@@ -14,8 +14,9 @@ import java.nio.file.Paths;
 @RequestMapping("/api/files")
 public class FileController {
 
+    String filePath="jar/MagicalArena.jar";
     @PostMapping("/execute")
-    public ResponseEntity<String> executeFile(@RequestParam("filePath.jar") String filePath) {
+    public ResponseEntity<String> executeFile() {
         try {
             Path path = Paths.get(filePath);
             if (!Files.exists(path)) {
